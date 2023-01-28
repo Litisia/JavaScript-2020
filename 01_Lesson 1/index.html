@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript HW 1</title>
+    <style>
+        body {
+            margin: 0, auto;
+            font-size: 25px;
+            text-align: center;
+            line-height: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Создайте 3 переменных <b>( x = 6, y = 14, z = 4)</b>
+        <br><i>Выполните и отобразите результат следующих операций для этих переменных:</i>
+        <br><b>1.</b> x += y - x++ * z;
+        <br><b>2.</b> z = --x - y * 5;
+        <br><b>3.</b> y /= x + 5 % z;
+        <br><b>4.</b> z - x++ + y * 5;
+        <br><b>5.</b> x = y - x++ * z;
+    </p>
+
+    <script>
+        // 1.x += y - x++ * z
+        var x = 6;
+        var y = 14;
+        var z = 4;
+
+        var a = x + y; // x += y; 6 + 14= 20
+        var b = x++ * z; //x++ = 6; 6 * 4= 24
+        var c = a - b; // 20 - 24= -4
+
+        document.write("1. x += y - x++ * z = " + c + "<br /><hr/>");
+        // 2. z = --x - y * 5
+        var x = 6;
+        var y = 14;
+        var z = 4;
+
+        var z = --x - y * 5;
+        //--x = 5
+        // y * 5 = 70;  14 * 5 = 70
+        // 5 - 70 = -65
+
+        document.write ("2. " + z + " = --x - y * 5" + "<br /><hr/>");
+        // 3.y /= x + 5 % z
+        var x = 6;
+        var y = 14;
+        var z = 4;
+
+        var a = y / x; // 14 / 6 = 2.3333...
+        var b = 5 % z; // 5 % 4 = 1
+        var c = a + b; // 2.33.. + 1 = 3.33333...
+        document.write("3. y /= x + 5 % z = " + c + "<br /><hr/>");
+        // 4.z - x++ + y * 5
+        var x = 6;
+        var y = 14;
+        var z = 4;
+
+        var a = z - x++; // 4 - 6 = -2
+        var b = y * 5; // 14 * 5 = 70
+        var c = a + b; // -2 + 70 = 68
+        document.write("4. z - x++ + y * 5 = "+ c + "<br /><hr/>");
+        
+        // 5.x = y - x++ * z
+        var x = 6;
+        var y = 14;
+        var z = 4;
+
+        var a = x++ * z; // 6 * 4 = 24
+        var x = y - a; // 14 - 24 = -10
+        document.write("5. " + x + " = y - x++ * z");
+
+    </script>
+</body>
+
+</html>
