@@ -90,3 +90,4 @@ const bosh = "&nbsp";
       }
       document.write("<br>"); //разрыв строки 
     }
+
