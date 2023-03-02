@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons_3 Массивы</title>
+</head>
+
+<body>
+    <script>
+      
+        const JOIN = " &#127932; ";
+        let styles = ["Джаз", "Блюз"];
+        document.write("Создала массив: " + styles.join(JOIN) + "<br/><hr/>");
+        styles[2] = "Рок-н-ролл";
+        document.write("Добавила (Рок-н-ролл) в конец: " + styles.join(JOIN) + "<br/><hr/>");
+        let line = styles.length;
+        styles[((line - 1) / 2)] = "Классика";
+        document.write("Заменила значение в середине массива, также код работает для массивов с любой длиной: "
+            + styles.join(JOIN) + "<br/><hr/>");
+        var first = styles.shift();
+        document.write("Массив после того как удалила первый элемент: " + styles.join(JOIN) + "<br/><hr/>");
+        document.write("Удаленный элемент: " + first + "<br/><hr/>");
+        styles.unshift("Рэп", "Регги");
+        document.write("Массив после того как вставила в начало (Рэп и Регги): " + styles.join(JOIN) + "<br/><hr/>");
+
+    </script>
+
+
+</body>
+
+</html>
