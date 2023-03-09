@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons_5 Объекты</title>
+</head>
+
+<body>
+    <script>
+        // Создать объект "Документ", в котором определить свойства "Заголовок, тело, футер, дата".
+        // Создать в объекте вложенный объект - "Приложение".
+        // Создать в объекте "Приложение", вложенные объекты, "Заголовок, тело, футер, дата".
+        // Создать методы для заполнения и отображения документа
+        const RED = " <span style='color: red;'> ";
+        const GREEN = " <span style='color: green;'> ";
+        let dokument = {
+            title: "",
+            body: "",
+            footer: "",
+            date: "",
+            app: {
+                title: "",
+                body: "",
+                footer: "",
+                date: ""
+            },
+            setDokument: function (title, body, footer, date) {
+                this.title = title;
+                this.body = body;
+                this.footer = footer;
+                this.date = date;
+            },
+            setApp: function (title, body, footer, date) {
+                this.app.title = title;
+                this.app.body = body;
+                this.app.footer = footer;
+                this.app.date = date;
+            },
+            displayDokument: function () {
+                document.write("<b>" + RED + "Title: </span></b>" + this.title + "<br/>");
+                document.write("<b>" + RED + "Body: </span></b>" + this.body + "<br/>");
+                document.write("<b>" + RED + "Footer: </span></b>" + this.footer + "<br/>");
+                document.write("<b>" + RED + "Date: </span></b>" + this.date + "<br/><hr/>");
+            },
+            displayApp: function () {
+                document.write("<b>" + GREEN + "App Title: </span></b>" + this.app.title + "<br/>");
+                document.write("<b>" + GREEN + "App Body: </span></b>" + this.app.body + "<br/>");
+                document.write("<b>" + GREEN + "App Footer: </span></b>" + this.app.footer + "<br/>");
+                document.write("<b>" + GREEN + "App Date: </span></b>" + this.app.date + "<br/><hr/>");
+            }
+        };
+
+        dokument.setDokument("Document Title", "Document Body", "Document Footer", "2022-03-08");
+        dokument.setApp("App Title", "App Body", "App Footer", "2022-03-09");
+        dokument.displayDokument();
+        dokument.displayApp();
+    </script>
+
+
+</body>
+
+</html>
