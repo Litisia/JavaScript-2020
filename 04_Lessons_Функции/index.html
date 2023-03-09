@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons_4 Функции в JavaSript</title>
+</head>
+
+<body>
+    <script>
+        // Напиши функцию map(fn, array), которая принимает на вход функцию и массив, 
+        // и обрабатывает каждый элемент массива этой функцией, возвращая новый массив.
+
+        function fn(x) {
+            return x * x;
+        };
+
+        function map(fn, array) {
+            const result = [];
+            for (let i = 0; i < array.length; i++) {
+                result.push(fn(array[i]));
+            }
+            return result;
+
+        };
+
+        document.write(map(fn, [1, 2, 3, 4])); // 1,4,9,16
+
+        // Перепишите функцию, используя оператор '?' или '||'
+        // function checkAge(age) {
+        //     if (age > 18) {
+        //         return true;
+        //     } else {
+        //         return confirm('Родители разрешили?');
+        //     }
+        // }
+        // Следующая функция возвращает true, если параметр age больше 18. 
+        // В ином случае она задаёт вопрос confirm и возвращает его результат.
+
+
+        let age = prompt("Сколько тебе лет?");
+
+        function checkAge(age) {
+            return (age > 18) ? true : confirm('Родители разрешили?'); // оператор '?'
+        };
+        checkAge(age);
+
+        
+        function checkAge(age) {
+            return (age > 18) || confirm('Родители разрешили?') // оператор '||'
+        };
+        checkAge(age);
+    </script>
+
+
+</body>
+
+</html>
