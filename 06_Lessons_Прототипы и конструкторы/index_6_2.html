@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lessons_6 Прототипы и конструкторы</title>
+</head>
+
+<body>
+    <script>
+        //  Разработайте функцию-конструктор, которая будет создавать обьект Human (человек), 
+        //  добавьте на свое усмотрение свойства и методы в этот обьект. Подумайте, какие методы 
+        //  и свойства следует сделать уровня экземпляра, а какие уровня функции-конструктора.
+
+        function Human(name, age) {
+            this.name = name;
+            this.age = age;
+            this.gender = '';
+            this.sayHello = function () {
+                document.write('Привет, меня зовут ' + this.name + "<br><br>");
+            }
+        }
+
+        Human.planet = 'Земля';
+
+        Human.prototype.setGender = function (gender) {
+            this.gender = gender;
+        }
+
+        Human.prototype.getPlanet = function () {
+            return Human.planet;
+        }
+
+        let person1 = new Human('Иван', 25);
+        let person2 = new Human('Мария', 30);
+
+        person1.sayHello(); // Привет, меня зовут Иван
+        person2.sayHello();
+
+        person1.setGender('мужской');
+
+        document.write(person1.gender + "<br><br>"); // мужской
+
+        document.write(person1.getPlanet() + "<br><br>"); // Земля
+        document.write(person2.getPlanet()); // Земля
+    </script>
+</body>
+
+</html>
